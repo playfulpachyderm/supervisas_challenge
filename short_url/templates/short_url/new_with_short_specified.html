@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <h1>Shorten a url</h1>
+    {% if error %}
+      <div style="color: red">This short id is already taken</div>
+    {% endif %}
+
+    <form action="/short_url/new_with_short_specified" method="POST">
+      {% csrf_token %}
+      <label>Long url:</label>
+      <input type="text" name="long_url" />
+
+      <label>Requested short id:</label>
+      <input type="text" name="requested_short" />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

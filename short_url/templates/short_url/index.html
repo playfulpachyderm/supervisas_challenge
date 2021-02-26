@@ -1,0 +1,18 @@
+<html>
+  <body>
+    <h1>Shortened urls</h1>
+    <p>Make your own shortened URLs!  Click <a href="/short_url/new">here</a> to create a short url, or <a href="/short_url/new_with_short_specified">here</a> to choose your own short code!</p>
+    <ul>
+      {% for short_url in short_urls %}
+        <li>
+          <span class="short_id">
+            <a href="/short_url/{{ short_url.short_id }}">
+              {{ short_url.short_id }}
+            </a>
+          </span>
+          <span class="long_url">{{ short_url.long_url }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
